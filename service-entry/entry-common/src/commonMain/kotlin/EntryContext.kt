@@ -9,6 +9,7 @@ data class EntryContext(
     var state: EntryState = EntryState.NONE,
     val errors: MutableList<EntryError> = mutableListOf(),
 
+    var corSettings: EntryCorSettings = EntryCorSettings(),
     var workMode: EntryWorkMode = EntryWorkMode.PROD,
     var stubCase: EntryStubs = EntryStubs.NONE,
 
@@ -16,6 +17,12 @@ data class EntryContext(
     var timeStart: Instant = Instant.NONE,
     var entryRequest: Entry = Entry(),
     var entryFilterRequest: EntryFilter = EntryFilter(),
+
+    var entryValidating: Entry = Entry(),
+    var entryFilterValidating: EntryFilter = EntryFilter(),
+
+    var entryValidated: Entry = Entry(),
+    var entryFilterValidated: EntryFilter = EntryFilter(),
 
     var entryResponse: Entry = Entry(),
     var entriesResponse: MutableList<Entry> = mutableListOf(),
